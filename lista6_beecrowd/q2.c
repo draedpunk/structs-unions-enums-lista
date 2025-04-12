@@ -22,57 +22,17 @@ double calcular_preco_total(int quantidade, double p){
 }
 
 int main(){
-    int codigo_fornecido;
     Cachorro_quente cq;
     Churros_chaves cc;
-    int quantidade_fornecida;
-    double preco_fornecido;
+    double total = 0.0;
 
-    for (int i = 0; i < 2; i++){
-        scanf("%d %d %lf\n", &codigo_fornecido, &quantidade_fornecida, &preco_fornecido);
-    }
+    scanf("%d %d %lf", &cq.id, &cq.qtd, &cq.preco);
+    total += calcular_preco_total(cq.qtd, cq.preco);
 
-    double r,soma = 0.0;
-    int qtdzinha_cachorro = cq.qtd;
-    double precinho_cachorro = cq.preco;
+    scanf("%d %d %lf", &cc.id, &cc.qtd, &cc.preco);
+    total += calcular_preco_total(cc.qtd, cc.preco);
 
-    int qtdzinha_churros = cc.qtd;
-    double precinho_churros = cc.preco;
+    printf("VALOR A PAGAR: R$ %.2lf\n", total);
 
-    switch (codigo_fornecido)
-    {
-    case 1: // cachorro
-        r = calcular_preco_total(qtdzinha_cachorro, precinho_cachorro);
-        soma += r; 
-        printf("VALOR A PAGAR: R$ %.2lf", r);
-        break;
-    case 12: // cachorro
-        r = calcular_preco_total(qtdzinha_cachorro, precinho_cachorro);
-        printf("VALOR A PAGAR: R$ %.2lf", r);
-        break;
-
-    case 13: // cachorro
-        r = calcular_preco_total(qtdzinha_cachorro, precinho_cachorro);
-        printf("VALOR A PAGAR: R$ %.2lf", r);
-        break;
-
-    case 2: // churros
-        r = calcular_preco_total(qtdzinha_churros, precinho_churros);
-        printf("VALOR A PAGAR: R$ %.2lf", r);
-        break;
-
-    case 16: // churros
-        r = calcular_preco_total(qtdzinha_churros, precinho_churros);
-        printf("VALOR A PAGAR: R$ %.2lf", r);
-        break;
-
-    case 161: // churros
-        r = calcular_preco_total(qtdzinha_churros, precinho_churros);
-        printf("VALOR A PAGAR: R$ %.2lf", r);
-        break;
-
-    default:
-        break;
-    }
     return 0;
 }
